@@ -1,3 +1,4 @@
+using Project.V8.Lib;
 namespace Project.V8
 {
     public partial class FormMain : Form
@@ -6,10 +7,188 @@ namespace Project.V8
         {
             InitializeComponent();
         }
+        DataService ds = new DataService();
+        string openFilePath;
+        static int rows;
+        static int columns;
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonOpenFile_DAA_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openFileDialogLimo_DAA.ShowDialog();
+                openFilePath = openFileDialogLimo_DAA.FileName;
+
+                string[,] matrix = ds.LoadFromFileData(openFilePath);
+
+                rows = matrix.GetLength(0);
+                columns = matrix.GetLength(1);
+
+                dataGridViewLimo_DAA.RowCount = rows + 1;
+                dataGridViewLimo_DAA.ColumnCount = columns;
+
+                //добавление данных
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < columns; j++)
+                    {
+                        dataGridViewLimo_DAA.Rows[i].Cells[j].Value = matrix[i, j];
+                    }
+                }
+                dataGridViewLimo_DAA.AutoResizeColumns();
+                dataGridViewLimo_DAA.ScrollBars = ScrollBars.Both;
+            }
+            catch
+            {
+                MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonInfo_DAA_Click(object sender, EventArgs e)
+        {
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
+        }
+
+        private void dataGridViewLimo_DAA_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSaveFile_DAA_Click(object sender, EventArgs e)
+        {
+            saveFileDialogLimo_DAA.FileName = "LimoFile.csv";
+            saveFileDialogLimo_DAA.InitialDirectory = @"C:\DataSprint5";
+            saveFileDialogLimo_DAA.ShowDialog();
+
+            string path = saveFileDialogLimo_DAA.FileName;
+
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
+
+            if (fileExists)
+            {
+                File.Delete(path);
+            }
+
+            int rows = dataGridViewLimo_DAA.RowCount;
+            int columns = dataGridViewLimo_DAA.ColumnCount;
+
+            string str = "";
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    if (j != columns - 1)
+                    {
+                        str = str + dataGridViewLimo_DAA.Rows[i].Cells[j].Value + "; ";
+                    }
+                    else
+                    {
+                        str = str + dataGridViewLimo_DAA.Rows[i].Cells[j].Value;
+                    }
+                }
+                File.AppendAllText(path, str + Environment.NewLine);
+                str = "";
+            }
+        }
+
+        private void buttonDelRows_DAA_Click(object sender, EventArgs e)
+        {
+            dataGridViewLimo_DAA.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            if (dataGridViewLimo_DAA.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Пожалуйста, выберите строку для удаления.", "Строка не выбрана", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите удалить выбранные строки?", "Подтвердить удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                return;
+            }
+
+            try
+            {
+
+                List<int> rowsToDelete = new List<int>();
+                foreach (DataGridViewRow selectedRow in dataGridViewLimo_DAA.SelectedRows)
+                    rowsToDelete.Add(selectedRow.Index);
+
+                for (int i = rowsToDelete.Count - 1; i >= 0; i--)
+                {
+                    dataGridViewLimo_DAA.Rows.RemoveAt(rowsToDelete[i]);
+                }
+
+                dataGridViewLimo_DAA.ClearSelection();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка удаления строки: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (dataGridViewLimo_DAA.Rows.Count == 0)
+            {
+                buttonDelRows_DAA.Enabled = false;
+            }
+        }
+
+        private void groupBoxAboutMe_DAA_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonFilter_DAA_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow r in dataGridViewLimo_DAA.Rows)
+            {
+                if ((r.Cells[comboBoxCols_DAA.SelectedIndex].Value?.ToString() ?? "").ToUpper().Contains(textBoxFilter_DAA.Text.ToUpper()))
+                {
+                    dataGridViewLimo_DAA.Rows[r.Index].Visible = true;
+                    dataGridViewLimo_DAA.Rows[r.Index].Selected = true;
+                }
+                else
+                {
+                    dataGridViewLimo_DAA.CurrentCell = null;
+                    dataGridViewLimo_DAA.Rows[r.Index].Visible = false;
+                }
+            }
+        }
+
+
+
+        private void comboBoxCols_DAA_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (comboBoxCols_DAA.SelectedIndex >= 0)
+            {
+                textBoxFilter_DAA.Enabled = true;
+            }
+            else
+            {
+                textBoxFilter_DAA.Enabled = false;
+            }
+        }
+
+        private void dataGridViewLimo_DAA_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            int index = e.RowIndex;
+            string indexStr = (index).ToString();
+            object header = this.dataGridViewLimo_DAA.Rows[index].HeaderCell.Value;
+            if (header == null || !header.Equals(indexStr))
+                this.dataGridViewLimo_DAA.Rows[index].HeaderCell.Value = indexStr;
         }
     }
 }

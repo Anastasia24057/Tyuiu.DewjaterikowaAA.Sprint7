@@ -51,23 +51,25 @@
             // 
             buttonNo.BackColor = Color.FromArgb(255, 192, 192);
             buttonNo.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            buttonNo.Location = new Point(311, 196);
+            buttonNo.Location = new Point(324, 196);
             buttonNo.Name = "buttonNo";
             buttonNo.Size = new Size(85, 55);
             buttonNo.TabIndex = 1;
             buttonNo.Text = "НЕТ";
             buttonNo.UseVisualStyleBackColor = false;
+            buttonNo.Click += buttonNo_Click;
             // 
             // buttonYes
             // 
             buttonYes.BackColor = Color.FromArgb(255, 192, 192);
             buttonYes.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            buttonYes.Location = new Point(219, 196);
+            buttonYes.Location = new Point(232, 196);
             buttonYes.Name = "buttonYes";
             buttonYes.Size = new Size(86, 55);
             buttonYes.TabIndex = 0;
             buttonYes.Text = "ДА";
             buttonYes.UseVisualStyleBackColor = false;
+            buttonYes.Click += buttonYes_Click;
             // 
             // labelMe_DAA
             // 
@@ -87,7 +89,6 @@
             labelQes_DAA.Size = new Size(243, 40);
             labelQes_DAA.TabIndex = 4;
             labelQes_DAA.Text = "У вас есть какие-нибудь вопросы\r\n или предложения?";
-            labelQes_DAA.Click += label2_Click;
             // 
             // labelUp_DAA
             // 

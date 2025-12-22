@@ -1,4 +1,5 @@
 using Project.V8.Lib;
+using System.Windows.Forms;
 namespace Project.V8
 {
     public partial class FormMain : Form
@@ -189,6 +190,71 @@ namespace Project.V8
             object header = this.dataGridViewLimo_DAA.Rows[index].HeaderCell.Value;
             if (header == null || !header.Equals(indexStr))
                 this.dataGridViewLimo_DAA.Rows[index].HeaderCell.Value = indexStr;
+        }
+
+        private void textBoxSearch_DAA_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = textBoxSearch_DAA.Text.ToUpper();
+            dataGridViewLimo_DAA.CurrentCell = null;
+            foreach (DataGridViewRow r in dataGridViewLimo_DAA.Rows)
+            {
+                bool foundRow = false;
+
+                for (int i = 0; i < r.Cells.Count; i++)
+                {
+                    DataGridViewCell cell = r.Cells[i];
+                    string cellValue = (cell.Value?.ToString() ?? "").ToUpper();
+
+                    if (!string.IsNullOrEmpty(searchText) && cellValue.Contains(searchText))
+                    {
+                        cell.Style.BackColor = Color.BlueViolet;
+                        foundRow = true;
+                    }
+                    else
+                    {
+                        cell.Style.BackColor = Color.Empty;
+                    }
+                }
+
+                if (string.IsNullOrEmpty(searchText))
+                {
+                    r.Visible = true;
+                }
+                else
+                {
+                    r.Visible = foundRow;
+                }
+            }
+        }
+
+        private void buttonOpenFile_DAA_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipLimo_DAA.ToolTipTitle = "Открыть файл";
+        }
+
+        private void buttonSaveFile_DAA_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipLimo_DAA.ToolTipTitle = "Сохранить файл";
+        }
+
+        private void buttonDelRows_DAA_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipLimo_DAA.ToolTipTitle = "Удаление строки";
+        }
+
+        private void buttonInfo_DAA_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipLimo_DAA.ToolTipTitle = "Информация о разработчике";
+        }
+
+        private void buttonReminder_DAA_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipLimo_DAA.ToolTipTitle = "Информация о приложении";
+        }
+
+        private void buttonFilter_DAA_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipLimo_DAA.ToolTipTitle = "Отфильтровать";
         }
     }
 }

@@ -17,9 +17,16 @@ namespace Project.V8
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void buttonYes_Click(object sender, EventArgs e)
         {
+            FormYes formyes = new FormYes();
+            formyes.ShowDialog();
+        }
 
+        private void buttonNo_Click(object sender, EventArgs e)
+        {
+            FormNo formno = new FormNo();
+            formno.ShowDialog();
         }
     }
 }

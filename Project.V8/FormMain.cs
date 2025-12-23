@@ -256,5 +256,11 @@ namespace Project.V8
         {
             toolTipLimo_DAA.ToolTipTitle = "Отфильтровать";
         }
+
+        private void buttonReminder_DAA_Click(object sender, EventArgs e)
+        {
+            FormReminder formRem = new FormReminder();
+            formRem.ShowDialog();
+        }
     }
 }

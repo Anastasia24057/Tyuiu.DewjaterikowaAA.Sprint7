@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Project.V8
 {
-    public partial class FormNo : Form
+    public partial class FormReminder : Form
     {
-        public FormNo()
+        public FormReminder()
         {
             InitializeComponent();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

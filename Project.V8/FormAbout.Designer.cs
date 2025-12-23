@@ -49,11 +49,11 @@
             // 
             // buttonNo
             // 
-            buttonNo.BackColor = Color.FromArgb(255, 192, 192);
+            buttonNo.BackColor = Color.FromArgb(255, 224, 192);
             buttonNo.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            buttonNo.Location = new Point(324, 196);
+            buttonNo.Location = new Point(339, 219);
             buttonNo.Name = "buttonNo";
-            buttonNo.Size = new Size(85, 55);
+            buttonNo.Size = new Size(83, 50);
             buttonNo.TabIndex = 1;
             buttonNo.Text = "НЕТ";
             buttonNo.UseVisualStyleBackColor = false;
@@ -61,11 +61,11 @@
             // 
             // buttonYes
             // 
-            buttonYes.BackColor = Color.FromArgb(255, 192, 192);
+            buttonYes.BackColor = Color.FromArgb(255, 224, 192);
             buttonYes.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            buttonYes.Location = new Point(232, 196);
+            buttonYes.Location = new Point(231, 219);
             buttonYes.Name = "buttonYes";
-            buttonYes.Size = new Size(86, 55);
+            buttonYes.Size = new Size(87, 50);
             buttonYes.TabIndex = 0;
             buttonYes.Text = "ДА";
             buttonYes.UseVisualStyleBackColor = false;
@@ -74,21 +74,23 @@
             // labelMe_DAA
             // 
             labelMe_DAA.AutoSize = true;
-            labelMe_DAA.BackColor = Color.FromArgb(255, 224, 192);
-            labelMe_DAA.Location = new Point(193, 12);
+            labelMe_DAA.BackColor = Color.FromArgb(255, 192, 192);
+            labelMe_DAA.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelMe_DAA.Location = new Point(189, 12);
             labelMe_DAA.Name = "labelMe_DAA";
-            labelMe_DAA.Size = new Size(267, 160);
+            labelMe_DAA.Size = new Size(311, 184);
             labelMe_DAA.TabIndex = 3;
             labelMe_DAA.Text = "Разработчик: Девятерикова А. А.\r\nГруппа ИИПБ-25-1\r\nПрограмма разработана в рамках \r\nизучения языка С#\r\nТИУ (с) 2025\r\nВШЦТ (с) 2025\r\n-------------------------------------------\r\n\r\n";
             // 
             // labelQes_DAA
             // 
             labelQes_DAA.AutoSize = true;
-            labelQes_DAA.Location = new Point(193, 151);
+            labelQes_DAA.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelQes_DAA.Location = new Point(189, 170);
             labelQes_DAA.Name = "labelQes_DAA";
-            labelQes_DAA.Size = new Size(243, 40);
+            labelQes_DAA.Size = new Size(275, 46);
             labelQes_DAA.TabIndex = 4;
-            labelQes_DAA.Text = "У вас есть какие-нибудь вопросы\r\n или предложения?";
+            labelQes_DAA.Text = "У вас есть какие-нибудь вопросы\r\nили предложения?";
             // 
             // labelUp_DAA
             // 
@@ -103,8 +105,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 224, 192);
-            ClientSize = new Size(462, 263);
+            BackColor = Color.FromArgb(255, 192, 192);
+            ClientSize = new Size(482, 273);
             Controls.Add(labelUp_DAA);
             Controls.Add(labelQes_DAA);
             Controls.Add(buttonNo);
@@ -112,9 +114,9 @@
             Controls.Add(buttonYes);
             Controls.Add(pictureBoxAva_DAA);
             MaximizeBox = false;
-            MaximumSize = new Size(480, 310);
+            MaximumSize = new Size(500, 320);
             MinimizeBox = false;
-            MinimumSize = new Size(480, 310);
+            MinimumSize = new Size(500, 320);
             Name = "FormAbout";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Информация о разработчике";

@@ -113,6 +113,16 @@ namespace Project.V8.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap photo_5352561568140432947_y {
+            get {
+                object obj = ResourceManager.GetObject("photo_5352561568140432947_y", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap table_row_delete {
             get {
                 object obj = ResourceManager.GetObject("table_row_delete", resourceCulture);

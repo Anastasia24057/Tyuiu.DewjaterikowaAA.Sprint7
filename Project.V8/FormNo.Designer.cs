@@ -28,20 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNo));
+            pictureBoxHappyNewYear_DAA = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxHappyNewYear_DAA).BeginInit();
             SuspendLayout();
+            // 
+            // pictureBoxHappyNewYear_DAA
+            // 
+            pictureBoxHappyNewYear_DAA.Dock = DockStyle.Fill;
+            pictureBoxHappyNewYear_DAA.Image = (Image)resources.GetObject("pictureBoxHappyNewYear_DAA.Image");
+            pictureBoxHappyNewYear_DAA.Location = new Point(0, 0);
+            pictureBoxHappyNewYear_DAA.Name = "pictureBoxHappyNewYear_DAA";
+            pictureBoxHappyNewYear_DAA.Size = new Size(603, 334);
+            pictureBoxHappyNewYear_DAA.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxHappyNewYear_DAA.TabIndex = 0;
+            pictureBoxHappyNewYear_DAA.TabStop = false;
+            pictureBoxHappyNewYear_DAA.Click += pictureBox1_Click;
             // 
             // FormNo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(603, 334);
+            Controls.Add(pictureBoxHappyNewYear_DAA);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormNo";
-            Text = "no";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "С НОВЫМ ГОДОМ";
+            WindowState = FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)pictureBoxHappyNewYear_DAA).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private PictureBox pictureBoxHappyNewYear_DAA;
     }
 }

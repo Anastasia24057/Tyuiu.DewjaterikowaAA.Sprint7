@@ -49,8 +49,8 @@
             // 
             // buttonNo
             // 
-            buttonNo.BackColor = Color.FromArgb(255, 224, 192);
-            buttonNo.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            buttonNo.BackColor = Color.LemonChiffon;
+            buttonNo.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
             buttonNo.Location = new Point(339, 219);
             buttonNo.Name = "buttonNo";
             buttonNo.Size = new Size(83, 50);
@@ -61,8 +61,8 @@
             // 
             // buttonYes
             // 
-            buttonYes.BackColor = Color.FromArgb(255, 224, 192);
-            buttonYes.Font = new Font("Calibri", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            buttonYes.BackColor = Color.LemonChiffon;
+            buttonYes.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
             buttonYes.Location = new Point(231, 219);
             buttonYes.Name = "buttonYes";
             buttonYes.Size = new Size(87, 50);
@@ -74,7 +74,7 @@
             // labelMe_DAA
             // 
             labelMe_DAA.AutoSize = true;
-            labelMe_DAA.BackColor = Color.FromArgb(255, 192, 192);
+            labelMe_DAA.BackColor = Color.MistyRose;
             labelMe_DAA.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelMe_DAA.Location = new Point(189, 12);
             labelMe_DAA.Name = "labelMe_DAA";
@@ -105,7 +105,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 192, 192);
+            BackColor = Color.MistyRose;
             ClientSize = new Size(482, 273);
             Controls.Add(labelUp_DAA);
             Controls.Add(labelQes_DAA);

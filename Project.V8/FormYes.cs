@@ -16,5 +16,10 @@ namespace Project.V8
         {
             InitializeComponent();
         }
+
+        private void buttonOKYES_DAA_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -269,13 +269,66 @@
   <metadata name="ColumnMoneyy_DAA.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="ColumnColors.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ColumnProzz.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="buttonChartModel_DAA.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        tsbfD0Q1AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="ColumnMarka.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ColumnProz.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="openFileDialogLimo_DAA.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="saveFileDialogLimo_DAA.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>249, 1</value>
   </metadata>
+  <metadata name="openFileDialogMarks_DAA.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>693, 1</value>
+  </metadata>
+  <metadata name="openFileDialogColors_DAA.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>693, 1</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>137</value>
+    <value>25</value>
   </metadata>
 </root>

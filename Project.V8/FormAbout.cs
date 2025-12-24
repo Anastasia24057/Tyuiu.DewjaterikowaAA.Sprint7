@@ -27,6 +27,7 @@ namespace Project.V8
         {
             FormNo formno = new FormNo();
             formno.ShowDialog();
+            this.Close();
         }
     }
 }

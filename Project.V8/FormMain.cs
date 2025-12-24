@@ -1,5 +1,6 @@
 using Project.V8.Lib;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 namespace Project.V8
 {
     public partial class FormMain : Form
@@ -262,5 +263,158 @@ namespace Project.V8
             FormReminder formRem = new FormReminder();
             formRem.ShowDialog();
         }
+
+        private void buttonOpenLimoMOdel_DAA_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openFileDialogMarks_DAA.ShowDialog();
+                openFilePath = openFileDialogMarks_DAA.FileName;
+
+                string[,] matrix = ds.LoadFromFileData(openFilePath);
+
+                rows = matrix.GetLength(0);
+                columns = matrix.GetLength(1);
+
+                dataGridViewMarks_DAA.RowCount = rows + 1;
+                dataGridViewMarks_DAA.ColumnCount = columns;
+
+                //добавление данных
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < columns; j++)
+                    {
+                        dataGridViewMarks_DAA.Rows[i].Cells[j].Value = matrix[i, j];
+                    }
+                }
+                dataGridViewMarks_DAA.AutoResizeColumns();
+                dataGridViewMarks_DAA.ScrollBars = ScrollBars.Both;
+            }
+            catch
+            {
+                MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonChartModel_DAA_Click(object sender, EventArgs e)
+        {
+            // Очищаем существующие серии данных в диаграмме перед построением новой
+            chartMarks_DAA.Series.Clear();
+
+            // Создаем новую серию для нашей диаграммы (например, круговой/пироговой)
+            Series series = new Series("Series1");
+            series.ChartType = SeriesChartType.Pie; // Используем круговую диаграмму, как на изображении
+
+            // Проходим по строкам DataGridView и добавляем точки данных
+            foreach (DataGridViewRow row in dataGridViewMarks_DAA.Rows)
+            {
+                // Проверяем, что строка не пустая и содержит данные
+                if (row.Cells["ColumnMarka"].Value != null && row.Cells["ColumnProz"].Value != null)
+                {
+                    string brand = row.Cells["ColumnMarka"].Value.ToString();
+                    // Пытаемся преобразовать значение процента в число
+                    if (double.TryParse(row.Cells["ColumnProz"].Value.ToString(), out double percentage))
+                    {
+                        // Добавляем точку на диаграмму: X-значение (метка) и Y-значение (процент)
+                        series.Points.AddXY(brand, percentage);
+                    }
+                }
+            }
+
+            // Добавляем созданную серию в компонент Chart
+            chartMarks_DAA.Series.Add(series);
+
+            // Опционально: можно добавить подписи данных прямо на диаграмме
+            series.IsValueShownAsLabel = true;
+            chartMarks_DAA.Titles.Clear();
+            chartMarks_DAA.Titles.Add("Процентное соотношение марок лимузинов по частоте заказов");
+        }
+
+        private void buttonOpenLimoColor_DAA_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openFileDialogColors_DAA.ShowDialog();
+                openFilePath = openFileDialogColors_DAA.FileName;
+
+                string[,] matrix = ds.LoadFromFileData(openFilePath);
+
+                rows = matrix.GetLength(0);
+                columns = matrix.GetLength(1);
+
+                dataGridViewColors_DAA.RowCount = rows + 1;
+                dataGridViewColors_DAA.ColumnCount = columns;
+
+                //добавление данных
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < columns; j++)
+                    {
+                        dataGridViewColors_DAA.Rows[i].Cells[j].Value = matrix[i, j];
+                    }
+                }
+                dataGridViewColors_DAA.AutoResizeColumns();
+                dataGridViewColors_DAA.ScrollBars = ScrollBars.Both;
+            }
+            catch
+            {
+                MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonChartColor_DAA_Click(object sender, EventArgs e)
+        {
+            // Очищаем существующие серии данных в диаграмме перед построением новой
+            chartColors_DAA.Series.Clear();
+
+            // Создаем новую серию для нашей диаграммы (например, круговой/пироговой)
+            Series series = new Series("Series1");
+            series.ChartType = SeriesChartType.Pie; // Используем круговую диаграмму, как на изображении
+
+            // Проходим по строкам DataGridView и добавляем точки данных
+            foreach (DataGridViewRow row in dataGridViewColors_DAA.Rows)
+            {
+                // Проверяем, что строка не пустая и содержит данные
+                if (row.Cells["ColumnColors"].Value != null && row.Cells["ColumnProzz"].Value != null)
+                {
+                    string brand = row.Cells["ColumnColors"].Value.ToString();
+                    // Пытаемся преобразовать значение процента в число
+                    if (double.TryParse(row.Cells["ColumnProzz"].Value.ToString(), out double percentage))
+                    {
+                        // Добавляем точку на диаграмму: X-значение (метка) и Y-значение (процент)
+                        series.Points.AddXY(brand, percentage);
+                    }
+                }
+            }
+
+            // Добавляем созданную серию в компонент Chart
+            chartColors_DAA.Series.Add(series);
+
+            // Опционально: можно добавить подписи данных прямо на диаграмме
+            series.IsValueShownAsLabel = true;
+            chartColors_DAA.Titles.Clear();
+            chartColors_DAA.Titles.Add("Процентное соотношение цветов лимузинов по частоте заказов");
+        }
+
+        private void buttonOpenLimoMOdel_DAA_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipLimo_DAA.ToolTipTitle = "Открыть файл";
+        }
+
+        private void buttonOpenLimoColor_DAA_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipLimo_DAA.ToolTipTitle = "Открыть файл";
+        }
+
+        private void buttonChartColor_DAA_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipLimo_DAA.ToolTipTitle = "Построить диаграмму";
+        }
+
+        private void buttonChartModel_DAA_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipLimo_DAA.ToolTipTitle = "Построить диаграмму";
+        }
     }
+
 }

@@ -41,6 +41,7 @@
             textBoxRemind_DAA.ReadOnly = true;
             textBoxRemind_DAA.Size = new Size(552, 296);
             textBoxRemind_DAA.TabIndex = 0;
+            textBoxRemind_DAA.TabStop = false;
             textBoxRemind_DAA.Text = "Программа предназначена для работы с базой данных.\r\n\r\nВам предлагается работа с базой данных:\r\n- Открытие\r\n- Сохранение\r\n- Фильтрация\r\n- Поиск \r\n- Редактирование\r\n\r\nА также просмотр статистики";
             // 
             // FormReminder

@@ -30,6 +30,14 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             panelTop_DAA = new Panel();
             groupBoxAboutMe_DAA = new GroupBox();
             buttonReminder_DAA = new Button();
@@ -59,10 +67,29 @@
             ColumnCount_DAA = new DataGridViewTextBoxColumn();
             ColumnMoneyy_DAA = new DataGridViewTextBoxColumn();
             tabStatic_DAA = new TabPage();
-            groupBox_DAA = new GroupBox();
+            groupBoxColors_DAA = new GroupBox();
+            chartColors_DAA = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            buttonChartColor_DAA = new Button();
+            dataGridViewColors_DAA = new DataGridView();
+            ColumnColors = new DataGridViewTextBoxColumn();
+            ColumnProzz = new DataGridViewTextBoxColumn();
+            buttonOpenLimoColor_DAA = new Button();
+            pictureBox1 = new PictureBox();
+            textBoxColors_DAA = new TextBox();
+            groupBoxMarks_DAA = new GroupBox();
+            chartMarks_DAA = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            buttonChartModel_DAA = new Button();
+            dataGridViewMarks_DAA = new DataGridView();
+            ColumnMarka = new DataGridViewTextBoxColumn();
+            ColumnProz = new DataGridViewTextBoxColumn();
+            buttonOpenLimoMOdel_DAA = new Button();
+            pictureBoxMarka_DAA = new PictureBox();
+            textBoxMarka_DAA = new TextBox();
             openFileDialogLimo_DAA = new OpenFileDialog();
             saveFileDialogLimo_DAA = new SaveFileDialog();
             toolTipLimo_DAA = new ToolTip(components);
+            openFileDialogMarks_DAA = new OpenFileDialog();
+            openFileDialogColors_DAA = new OpenFileDialog();
             panelTop_DAA.SuspendLayout();
             groupBoxAboutMe_DAA.SuspendLayout();
             groupBoxFile_DAA.SuspendLayout();
@@ -73,6 +100,14 @@
             tabArenda_DAA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLimo_DAA).BeginInit();
             tabStatic_DAA.SuspendLayout();
+            groupBoxColors_DAA.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chartColors_DAA).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewColors_DAA).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBoxMarks_DAA.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chartMarks_DAA).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMarks_DAA).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMarka_DAA).BeginInit();
             SuspendLayout();
             // 
             // panelTop_DAA
@@ -291,7 +326,7 @@
             panelFill_DAA.Dock = DockStyle.Fill;
             panelFill_DAA.Location = new Point(0, 136);
             panelFill_DAA.Name = "panelFill_DAA";
-            panelFill_DAA.Size = new Size(1924, 398);
+            panelFill_DAA.Size = new Size(1924, 793);
             panelFill_DAA.TabIndex = 1;
             // 
             // tabControlBase_DAA
@@ -302,7 +337,7 @@
             tabControlBase_DAA.Location = new Point(0, 0);
             tabControlBase_DAA.Name = "tabControlBase_DAA";
             tabControlBase_DAA.SelectedIndex = 0;
-            tabControlBase_DAA.Size = new Size(1924, 398);
+            tabControlBase_DAA.Size = new Size(1924, 793);
             tabControlBase_DAA.TabIndex = 0;
             // 
             // tabArenda_DAA
@@ -313,7 +348,7 @@
             tabArenda_DAA.Location = new Point(4, 29);
             tabArenda_DAA.Name = "tabArenda_DAA";
             tabArenda_DAA.Padding = new Padding(3);
-            tabArenda_DAA.Size = new Size(1916, 365);
+            tabArenda_DAA.Size = new Size(1916, 760);
             tabArenda_DAA.TabIndex = 0;
             tabArenda_DAA.Text = "БАЗА ДАННЫХ";
             // 
@@ -327,7 +362,7 @@
             dataGridViewLimo_DAA.Name = "dataGridViewLimo_DAA";
             dataGridViewLimo_DAA.RowHeadersVisible = false;
             dataGridViewLimo_DAA.RowHeadersWidth = 50;
-            dataGridViewLimo_DAA.Size = new Size(1910, 359);
+            dataGridViewLimo_DAA.Size = new Size(1910, 754);
             dataGridViewLimo_DAA.TabIndex = 0;
             dataGridViewLimo_DAA.CellContentClick += dataGridViewLimo_DAA_CellContentClick;
             dataGridViewLimo_DAA.RowPrePaint += dataGridViewLimo_DAA_RowPrePaint;
@@ -383,23 +418,233 @@
             // 
             // tabStatic_DAA
             // 
-            tabStatic_DAA.BackColor = Color.FromArgb(255, 192, 192);
-            tabStatic_DAA.Controls.Add(groupBox_DAA);
+            tabStatic_DAA.BackColor = Color.PowderBlue;
+            tabStatic_DAA.Controls.Add(groupBoxColors_DAA);
+            tabStatic_DAA.Controls.Add(groupBoxMarks_DAA);
             tabStatic_DAA.Location = new Point(4, 29);
             tabStatic_DAA.Name = "tabStatic_DAA";
             tabStatic_DAA.Padding = new Padding(3);
-            tabStatic_DAA.Size = new Size(1916, 365);
+            tabStatic_DAA.Size = new Size(1916, 760);
             tabStatic_DAA.TabIndex = 1;
-            tabStatic_DAA.Text = "СТАТИСТИКА И АНАЛИТИКА";
+            tabStatic_DAA.Text = "СТАТИСТИКА";
             // 
-            // groupBox_DAA
+            // groupBoxColors_DAA
             // 
-            groupBox_DAA.Location = new Point(19, 18);
-            groupBox_DAA.Name = "groupBox_DAA";
-            groupBox_DAA.Size = new Size(428, 88);
-            groupBox_DAA.TabIndex = 0;
-            groupBox_DAA.TabStop = false;
-            groupBox_DAA.Text = "groupBox1";
+            groupBoxColors_DAA.BackColor = Color.LightCyan;
+            groupBoxColors_DAA.Controls.Add(chartColors_DAA);
+            groupBoxColors_DAA.Controls.Add(buttonChartColor_DAA);
+            groupBoxColors_DAA.Controls.Add(dataGridViewColors_DAA);
+            groupBoxColors_DAA.Controls.Add(buttonOpenLimoColor_DAA);
+            groupBoxColors_DAA.Controls.Add(pictureBox1);
+            groupBoxColors_DAA.Controls.Add(textBoxColors_DAA);
+            groupBoxColors_DAA.Dock = DockStyle.Right;
+            groupBoxColors_DAA.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            groupBoxColors_DAA.Location = new Point(965, 3);
+            groupBoxColors_DAA.Name = "groupBoxColors_DAA";
+            groupBoxColors_DAA.Size = new Size(948, 754);
+            groupBoxColors_DAA.TabIndex = 1;
+            groupBoxColors_DAA.TabStop = false;
+            groupBoxColors_DAA.Text = "СТАТИСТИКА ПОПУЛЯРНОСТИ ЦВЕТОВ ПРИ АРЕНДЕ ЛИМУЗИНА";
+            // 
+            // chartColors_DAA
+            // 
+            chartArea1.Name = "ChartArea1";
+            chartColors_DAA.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chartColors_DAA.Legends.Add(legend1);
+            chartColors_DAA.Location = new Point(344, 244);
+            chartColors_DAA.Name = "chartColors_DAA";
+            series1.ChartArea = "ChartArea1";
+            series1.IsVisibleInLegend = false;
+            series1.Legend = "Legend1";
+            series1.Name = "Диаграмма";
+            chartColors_DAA.Series.Add(series1);
+            chartColors_DAA.Size = new Size(575, 504);
+            chartColors_DAA.TabIndex = 6;
+            chartColors_DAA.Text = "chart1";
+            title1.Name = "Title1";
+            title1.Visible = false;
+            chartColors_DAA.Titles.Add(title1);
+            // 
+            // buttonChartColor_DAA
+            // 
+            buttonChartColor_DAA.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            buttonChartColor_DAA.Image = Properties.Resources.chart_bar_add;
+            buttonChartColor_DAA.Location = new Point(344, 165);
+            buttonChartColor_DAA.Name = "buttonChartColor_DAA";
+            buttonChartColor_DAA.Size = new Size(113, 73);
+            buttonChartColor_DAA.TabIndex = 6;
+            toolTipLimo_DAA.SetToolTip(buttonChartColor_DAA, "    ");
+            buttonChartColor_DAA.UseVisualStyleBackColor = true;
+            buttonChartColor_DAA.Click += buttonChartColor_DAA_Click;
+            buttonChartColor_DAA.MouseEnter += buttonChartColor_DAA_MouseEnter;
+            // 
+            // dataGridViewColors_DAA
+            // 
+            dataGridViewColors_DAA.AllowUserToAddRows = false;
+            dataGridViewColors_DAA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewColors_DAA.Columns.AddRange(new DataGridViewColumn[] { ColumnColors, ColumnProzz });
+            dataGridViewColors_DAA.Location = new Point(17, 141);
+            dataGridViewColors_DAA.Name = "dataGridViewColors_DAA";
+            dataGridViewColors_DAA.RowHeadersVisible = false;
+            dataGridViewColors_DAA.RowHeadersWidth = 51;
+            dataGridViewColors_DAA.Size = new Size(300, 607);
+            dataGridViewColors_DAA.TabIndex = 6;
+            // 
+            // ColumnColors
+            // 
+            ColumnColors.HeaderText = "ЦВЕТ";
+            ColumnColors.MinimumWidth = 6;
+            ColumnColors.Name = "ColumnColors";
+            ColumnColors.Width = 120;
+            // 
+            // ColumnProzz
+            // 
+            ColumnProzz.HeaderText = "ДОЛЯ ЗАКАЗОВ НА ЦВЕТ (%)";
+            ColumnProzz.MinimumWidth = 6;
+            ColumnProzz.Name = "ColumnProzz";
+            ColumnProzz.Width = 200;
+            // 
+            // buttonOpenLimoColor_DAA
+            // 
+            buttonOpenLimoColor_DAA.Image = Properties.Resources.application_go;
+            buttonOpenLimoColor_DAA.Location = new Point(635, 43);
+            buttonOpenLimoColor_DAA.Name = "buttonOpenLimoColor_DAA";
+            buttonOpenLimoColor_DAA.Size = new Size(142, 91);
+            buttonOpenLimoColor_DAA.TabIndex = 3;
+            toolTipLimo_DAA.SetToolTip(buttonOpenLimoColor_DAA, "Открыть файл \"LimoColor\" для обработки данных в формате CSV");
+            buttonOpenLimoColor_DAA.UseVisualStyleBackColor = true;
+            buttonOpenLimoColor_DAA.Click += buttonOpenLimoColor_DAA_Click;
+            buttonOpenLimoColor_DAA.MouseEnter += buttonOpenLimoColor_DAA_MouseEnter;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.стрела;
+            pictureBox1.Location = new Point(482, 41);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(147, 92);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
+            // textBoxColors_DAA
+            // 
+            textBoxColors_DAA.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            textBoxColors_DAA.Location = new Point(17, 42);
+            textBoxColors_DAA.Multiline = true;
+            textBoxColors_DAA.Name = "textBoxColors_DAA";
+            textBoxColors_DAA.Size = new Size(444, 91);
+            textBoxColors_DAA.TabIndex = 0;
+            textBoxColors_DAA.Text = "Знаете, какие цвета автомобилей чаще всего берут для аренды лимузина?";
+            // 
+            // groupBoxMarks_DAA
+            // 
+            groupBoxMarks_DAA.BackColor = Color.LightCyan;
+            groupBoxMarks_DAA.Controls.Add(chartMarks_DAA);
+            groupBoxMarks_DAA.Controls.Add(buttonChartModel_DAA);
+            groupBoxMarks_DAA.Controls.Add(dataGridViewMarks_DAA);
+            groupBoxMarks_DAA.Controls.Add(buttonOpenLimoMOdel_DAA);
+            groupBoxMarks_DAA.Controls.Add(pictureBoxMarka_DAA);
+            groupBoxMarks_DAA.Controls.Add(textBoxMarka_DAA);
+            groupBoxMarks_DAA.Dock = DockStyle.Left;
+            groupBoxMarks_DAA.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            groupBoxMarks_DAA.Location = new Point(3, 3);
+            groupBoxMarks_DAA.Name = "groupBoxMarks_DAA";
+            groupBoxMarks_DAA.Size = new Size(956, 754);
+            groupBoxMarks_DAA.TabIndex = 0;
+            groupBoxMarks_DAA.TabStop = false;
+            groupBoxMarks_DAA.Text = "СТАТИСТИКА ПОПУЛЯРНОСТИ МАРОК ПРИ АРЕНДЕ ЛИМУЗИНА";
+            // 
+            // chartMarks_DAA
+            // 
+            chartArea2.Name = "ChartArea1";
+            chartMarks_DAA.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            chartMarks_DAA.Legends.Add(legend2);
+            chartMarks_DAA.Location = new Point(335, 244);
+            chartMarks_DAA.Name = "chartMarks_DAA";
+            series2.ChartArea = "ChartArea1";
+            series2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            series2.IsVisibleInLegend = false;
+            series2.Legend = "Legend1";
+            series2.Name = "Диаграмма";
+            chartMarks_DAA.Series.Add(series2);
+            chartMarks_DAA.Size = new Size(578, 504);
+            chartMarks_DAA.TabIndex = 5;
+            title2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            title2.Name = "Процентное соотношение цветов лимузинов по частоте заказов";
+            chartMarks_DAA.Titles.Add(title2);
+            // 
+            // buttonChartModel_DAA
+            // 
+            buttonChartModel_DAA.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            buttonChartModel_DAA.Image = (Image)resources.GetObject("buttonChartModel_DAA.Image");
+            buttonChartModel_DAA.Location = new Point(335, 165);
+            buttonChartModel_DAA.Name = "buttonChartModel_DAA";
+            buttonChartModel_DAA.Size = new Size(116, 73);
+            buttonChartModel_DAA.TabIndex = 4;
+            toolTipLimo_DAA.SetToolTip(buttonChartModel_DAA, "  ");
+            buttonChartModel_DAA.UseVisualStyleBackColor = true;
+            buttonChartModel_DAA.Click += buttonChartModel_DAA_Click;
+            buttonChartModel_DAA.MouseEnter += buttonChartModel_DAA_MouseEnter;
+            // 
+            // dataGridViewMarks_DAA
+            // 
+            dataGridViewMarks_DAA.AllowUserToAddRows = false;
+            dataGridViewMarks_DAA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewMarks_DAA.Columns.AddRange(new DataGridViewColumn[] { ColumnMarka, ColumnProz });
+            dataGridViewMarks_DAA.Location = new Point(18, 141);
+            dataGridViewMarks_DAA.Name = "dataGridViewMarks_DAA";
+            dataGridViewMarks_DAA.RowHeadersVisible = false;
+            dataGridViewMarks_DAA.RowHeadersWidth = 51;
+            dataGridViewMarks_DAA.Size = new Size(297, 607);
+            dataGridViewMarks_DAA.TabIndex = 3;
+            // 
+            // ColumnMarka
+            // 
+            ColumnMarka.HeaderText = "МАРКА";
+            ColumnMarka.MinimumWidth = 6;
+            ColumnMarka.Name = "ColumnMarka";
+            ColumnMarka.Width = 120;
+            // 
+            // ColumnProz
+            // 
+            ColumnProz.HeaderText = "ДОЛЯ ЗАКАЗОВ НА МАРКУ (%)";
+            ColumnProz.MinimumWidth = 6;
+            ColumnProz.Name = "ColumnProz";
+            ColumnProz.Width = 180;
+            // 
+            // buttonOpenLimoMOdel_DAA
+            // 
+            buttonOpenLimoMOdel_DAA.Image = Properties.Resources.application_go1;
+            buttonOpenLimoMOdel_DAA.Location = new Point(627, 41);
+            buttonOpenLimoMOdel_DAA.Name = "buttonOpenLimoMOdel_DAA";
+            buttonOpenLimoMOdel_DAA.Size = new Size(142, 92);
+            buttonOpenLimoMOdel_DAA.TabIndex = 2;
+            toolTipLimo_DAA.SetToolTip(buttonOpenLimoMOdel_DAA, "Открыть файл \"LimoBrand\" для обработки данных в формате CSV");
+            buttonOpenLimoMOdel_DAA.UseVisualStyleBackColor = true;
+            buttonOpenLimoMOdel_DAA.Click += buttonOpenLimoMOdel_DAA_Click;
+            buttonOpenLimoMOdel_DAA.MouseEnter += buttonOpenLimoMOdel_DAA_MouseEnter;
+            // 
+            // pictureBoxMarka_DAA
+            // 
+            pictureBoxMarka_DAA.Image = Properties.Resources.стрела;
+            pictureBoxMarka_DAA.Location = new Point(474, 42);
+            pictureBoxMarka_DAA.Name = "pictureBoxMarka_DAA";
+            pictureBoxMarka_DAA.Size = new Size(147, 92);
+            pictureBoxMarka_DAA.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxMarka_DAA.TabIndex = 1;
+            pictureBoxMarka_DAA.TabStop = false;
+            // 
+            // textBoxMarka_DAA
+            // 
+            textBoxMarka_DAA.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            textBoxMarka_DAA.Location = new Point(16, 42);
+            textBoxMarka_DAA.Multiline = true;
+            textBoxMarka_DAA.Name = "textBoxMarka_DAA";
+            textBoxMarka_DAA.Size = new Size(444, 91);
+            textBoxMarka_DAA.TabIndex = 0;
+            textBoxMarka_DAA.Text = "Знаете, какие марки автомобилей чаще всего берут для аренды лимузина?";
             // 
             // openFileDialogLimo_DAA
             // 
@@ -409,12 +654,20 @@
             // 
             toolTipLimo_DAA.IsBalloon = true;
             // 
+            // openFileDialogMarks_DAA
+            // 
+            openFileDialogMarks_DAA.FileName = "openFileDialog1";
+            // 
+            // openFileDialogColors_DAA
+            // 
+            openFileDialogColors_DAA.FileName = "openFileDialog1";
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1924, 534);
+            ClientSize = new Size(1924, 929);
             Controls.Add(panelFill_DAA);
             Controls.Add(panelTop_DAA);
             Name = "FormMain";
@@ -433,6 +686,16 @@
             tabArenda_DAA.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewLimo_DAA).EndInit();
             tabStatic_DAA.ResumeLayout(false);
+            groupBoxColors_DAA.ResumeLayout(false);
+            groupBoxColors_DAA.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chartColors_DAA).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewColors_DAA).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBoxMarks_DAA.ResumeLayout(false);
+            groupBoxMarks_DAA.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chartMarks_DAA).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewMarks_DAA).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMarka_DAA).EndInit();
             ResumeLayout(false);
         }
 
@@ -458,7 +721,7 @@
         private GroupBox groupBoxFile_DAA;
         private Button buttonDelRows_DAA;
         private GroupBox groupBoxRows_DAA;
-        private GroupBox groupBox_DAA;
+        private GroupBox groupBoxMarks_DAA;
         private GroupBox groupBoxFilter_DAA;
         private ComboBox comboBoxCols_DAA;
         private TextBox textBoxFilter_DAA;
@@ -471,5 +734,24 @@
         private Label labelSearch_DAA;
         private ToolTip toolTipLimo_DAA;
         private Button buttonReminder_DAA;
+        private GroupBox groupBoxColors_DAA;
+        private Button buttonOpenLimoMOdel_DAA;
+        private PictureBox pictureBoxMarka_DAA;
+        private TextBox textBoxMarka_DAA;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartMarks_DAA;
+        private Button buttonChartModel_DAA;
+        private DataGridView dataGridViewMarks_DAA;
+        private OpenFileDialog openFileDialogMarks_DAA;
+        private Button buttonChartColor_DAA;
+        private DataGridView dataGridViewColors_DAA;
+        private Button buttonOpenLimoColor_DAA;
+        private PictureBox pictureBox1;
+        private TextBox textBoxColors_DAA;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartColors_DAA;
+        private OpenFileDialog openFileDialogColors_DAA;
+        private DataGridViewTextBoxColumn ColumnMarka;
+        private DataGridViewTextBoxColumn ColumnProz;
+        private DataGridViewTextBoxColumn ColumnColors;
+        private DataGridViewTextBoxColumn ColumnProzz;
     }
 }

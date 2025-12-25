@@ -455,15 +455,16 @@
             chartColors_DAA.Location = new Point(344, 244);
             chartColors_DAA.Name = "chartColors_DAA";
             series1.ChartArea = "ChartArea1";
-            series1.IsVisibleInLegend = false;
             series1.Legend = "Legend1";
             series1.Name = "Диаграмма";
             chartColors_DAA.Series.Add(series1);
             chartColors_DAA.Size = new Size(575, 504);
             chartColors_DAA.TabIndex = 6;
             chartColors_DAA.Text = "chart1";
+            title1.BackColor = Color.FromArgb(255, 192, 192);
+            title1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             title1.Name = "Title1";
-            title1.Visible = false;
+            title1.Text = "Процентное соотношение цветов лимузинов по частоте заказов";
             chartColors_DAA.Titles.Add(title1);
             // 
             // buttonChartColor_DAA
@@ -565,14 +566,15 @@
             chartMarks_DAA.Name = "chartMarks_DAA";
             series2.ChartArea = "ChartArea1";
             series2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            series2.IsVisibleInLegend = false;
             series2.Legend = "Legend1";
             series2.Name = "Диаграмма";
             chartMarks_DAA.Series.Add(series2);
             chartMarks_DAA.Size = new Size(578, 504);
             chartMarks_DAA.TabIndex = 5;
+            title2.BackColor = Color.FromArgb(255, 192, 192);
             title2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             title2.Name = "Процентное соотношение цветов лимузинов по частоте заказов";
+            title2.Text = "Процентное соотношение марок лимузинов по частоте заказов";
             chartMarks_DAA.Titles.Add(title2);
             // 
             // buttonChartModel_DAA

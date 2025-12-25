@@ -43,7 +43,6 @@
             pictureBoxHappyNewYear_DAA.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxHappyNewYear_DAA.TabIndex = 0;
             pictureBoxHappyNewYear_DAA.TabStop = false;
-            pictureBoxHappyNewYear_DAA.Click += pictureBox1_Click;
             // 
             // FormNo
             // 

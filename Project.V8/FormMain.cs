@@ -32,7 +32,7 @@ namespace Project.V8
                 rows = matrix.GetLength(0);
                 columns = matrix.GetLength(1);
 
-                dataGridViewLimo_DAA.RowCount = rows + 1;
+                dataGridViewLimo_DAA.RowCount = rows;
                 dataGridViewLimo_DAA.ColumnCount = columns;
 
                 //добавление данных
@@ -276,7 +276,7 @@ namespace Project.V8
                 rows = matrix.GetLength(0);
                 columns = matrix.GetLength(1);
 
-                dataGridViewMarks_DAA.RowCount = rows + 1;
+                dataGridViewMarks_DAA.RowCount = rows;
                 dataGridViewMarks_DAA.ColumnCount = columns;
 
                 //добавление данных
@@ -326,8 +326,8 @@ namespace Project.V8
 
             // Опционально: можно добавить подписи данных прямо на диаграмме
             series.IsValueShownAsLabel = true;
-            chartMarks_DAA.Titles.Clear();
-            chartMarks_DAA.Titles.Add("Процентное соотношение марок лимузинов по частоте заказов");
+            //chartMarks_DAA.Titles.Clear();
+            //chartMarks_DAA.Titles.Add("Процентное соотношение марок лимузинов по частоте заказов");
         }
 
         private void buttonOpenLimoColor_DAA_Click(object sender, EventArgs e)
@@ -342,7 +342,7 @@ namespace Project.V8
                 rows = matrix.GetLength(0);
                 columns = matrix.GetLength(1);
 
-                dataGridViewColors_DAA.RowCount = rows + 1;
+                dataGridViewColors_DAA.RowCount = rows;
                 dataGridViewColors_DAA.ColumnCount = columns;
 
                 //добавление данных
@@ -364,36 +364,26 @@ namespace Project.V8
 
         private void buttonChartColor_DAA_Click(object sender, EventArgs e)
         {
-            // Очищаем существующие серии данных в диаграмме перед построением новой
             chartColors_DAA.Series.Clear();
 
-            // Создаем новую серию для нашей диаграммы (например, круговой/пироговой)
             Series series = new Series("Series1");
-            series.ChartType = SeriesChartType.Pie; // Используем круговую диаграмму, как на изображении
+            series.ChartType = SeriesChartType.Pie; 
 
-            // Проходим по строкам DataGridView и добавляем точки данных
             foreach (DataGridViewRow row in dataGridViewColors_DAA.Rows)
             {
-                // Проверяем, что строка не пустая и содержит данные
                 if (row.Cells["ColumnColors"].Value != null && row.Cells["ColumnProzz"].Value != null)
                 {
                     string brand = row.Cells["ColumnColors"].Value.ToString();
-                    // Пытаемся преобразовать значение процента в число
                     if (double.TryParse(row.Cells["ColumnProzz"].Value.ToString(), out double percentage))
                     {
-                        // Добавляем точку на диаграмму: X-значение (метка) и Y-значение (процент)
                         series.Points.AddXY(brand, percentage);
                     }
                 }
             }
 
-            // Добавляем созданную серию в компонент Chart
             chartColors_DAA.Series.Add(series);
 
-            // Опционально: можно добавить подписи данных прямо на диаграмме
             series.IsValueShownAsLabel = true;
-            chartColors_DAA.Titles.Clear();
-            chartColors_DAA.Titles.Add("Процентное соотношение цветов лимузинов по частоте заказов");
         }
 
         private void buttonOpenLimoMOdel_DAA_MouseEnter(object sender, EventArgs e)
